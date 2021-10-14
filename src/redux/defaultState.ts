@@ -1,8 +1,8 @@
-export type Store = {
+export type IState = {
   number: number;  
 }
 
-const store: Store = {
+const store: IState = {
   number: 0,
 }
 

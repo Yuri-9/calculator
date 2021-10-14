@@ -1,0 +1,11 @@
+.calculator {
+  width: 240px;
+  background-color: #deb887;
+  &__row {
+    display: flex;
+    align-items: stretch;
+    align-content: stretch;
+    height: 50px;
+
+  }
+}

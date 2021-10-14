@@ -2,7 +2,7 @@ import Type from './types';
 
 const { SET_NUMBER } = Type;
 
-export function setCardType(value: number): {
+export function setNumber(value: number): {
   type: string;
   value: number;
 } {

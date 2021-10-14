@@ -1,5 +1,5 @@
-import { Store } from './defaultState';
+import { IState } from './defaultState';
 
-export const selectNumber = ({ number }: Store): Store['number'] => number;
+export const selectNumber = ({ number }: IState): IState['number'] => number;
 
 
