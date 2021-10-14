@@ -12,8 +12,8 @@ export function ButtonNumber({value}: IButtonNumber): JSX.Element {
   const dispatch = useDispatch();  
   const handleClick = () => {
     dispatch(setNumber(value))
-  }  
-  
+  }
+
   return (
     <button className="button__number" onClick={handleClick}> 
     {value}
