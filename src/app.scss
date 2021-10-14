@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: black;
+  font-family: 'Segoe UI Symbol', 'Roboto', Verdana, sans-serif;
+  height: 100%;
+}
+body.notScrollable {
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 8rem;
+  color: inherit;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 5.4rem;
+  line-height: 6.583rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 4.2rem;
+  line-height: 5.12rem;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 2.6rem;
+  line-height: 130%;
+  text-transform: capitalize;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+.main {
+  position: relative;
+  &__wrapper {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.page-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(100%);
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+}
