@@ -9,7 +9,7 @@ interface IButtonFunction {
 
 export function ButtonFunction({value, onClick}: IButtonFunction): JSX.Element {   
   return (
-    <button className="button__operator" onClick={onClick}> 
+    <button className="button button__function" onClick={onClick}> 
     {value}
     </button>
   )

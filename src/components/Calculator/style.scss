@@ -1,11 +1,21 @@
 .calculator {
+  margin: 0 auto;
   width: 240px;
   background-color: #deb887;
+  border-radius: 5px;
+  color: #ffffff; 
+  overflow: hidden; 
   &__row {
     display: flex;
     align-items: stretch;
     align-content: stretch;
     height: 50px;
-
   }
+}
+
+.button {
+  flex: 1 1 50px;
+  color: inherit;
+  font-size: 18px;
+  border-radius: 2px;
 }

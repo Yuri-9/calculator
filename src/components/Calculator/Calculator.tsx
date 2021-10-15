@@ -12,8 +12,7 @@ export function Calculator(): JSX.Element {
   const dispatch = useDispatch(); 
   const handleClear = () => {   
      dispatch(clearDisplay());
-  }  
-  
+  }    
   
   const handleMemory = () => {
     console.log('clear');    
@@ -48,7 +47,7 @@ export function Calculator(): JSX.Element {
        </div>
       <div className="calculator__row">      
         <ButtonNumber value={0}/>
-        <ButtonOperator value={'='}/>
+        <ButtonOperator value={Operator.EQUAL}/>
        </div>
     </div>
   );

@@ -1,15 +1,16 @@
 import React from 'react';
 import './style.scss';
 import { useSelector } from 'react-redux';
-import { selectNumber, selectOperator } from '../../redux/selectors';
+import { selectNumber, selectOperator, selectResult } from '../../redux/selectors';
 
 export function Display(): JSX.Element {
   const number = useSelector(selectNumber);
   const operator = useSelector(selectOperator);
+  const result = useSelector(selectResult);
     
   return (
     <div className="display"> 
-    {`${number}${operator}`}
+    {`${result ? result : number}${operator}`}
     </div>
   );
 }

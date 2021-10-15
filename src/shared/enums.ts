@@ -3,5 +3,6 @@ export enum Operator {
   MINUS = '-',
   MULTIPLY  = 'х',
   DIVIDE  = '/',
+  EQUAL = '=',
 }
 

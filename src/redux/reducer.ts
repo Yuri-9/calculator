@@ -7,7 +7,14 @@ const { SET_NUMBER, SET_OPERATOR, CLEAR_DISPLAY } = Type;
 export default (state = defaultState, { type, value }: { type: string; value: any }): any => {
   switch (type) {
     case SET_NUMBER:
-     let newNumber      
+      let newNumber;
+      if (!state.operator) {
+        if(state.result) {
+          return { ...state, number: value, result: null};
+        }
+        return { ...state, number: state.number * 10 + value};
+     }
+      if (state.operator) {
         switch (state.operator) {
           case Operator.PLUS:
             newNumber = state.number + value;            
@@ -21,19 +28,16 @@ export default (state = defaultState, { type, value }: { type: string; value: an
           case Operator.DIVIDE:
             newNumber = state.number / value; 
             break;
-          default:
-            newNumber = state.number * 10 + value;
+          default:           
             break;
-        }
-        if (state.operator) {
-          return { ...state, number: newNumber, operator: ''};
-        } else {
-          return { ...state, number: newNumber};
-        }    
+        }        
+         return { ...state, number: newNumber, operator: '', result: newNumber};        
+      }
     case SET_OPERATOR:
+      if (value === Operator.EQUAL) return;
       return { ...state, operator: value };
     case CLEAR_DISPLAY:
-      return { ...state, number: 0, operator: ''};
+      return { ...state, number: 0, operator: '', result: null};
     default:
       return state;
   }

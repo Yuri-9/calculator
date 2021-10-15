@@ -15,7 +15,7 @@ export function ButtonNumber({value}: IButtonNumber): JSX.Element {
   }
 
   return (
-    <button className="button__number" onClick={handleClick}> 
+    <button className="button button__number" onClick={handleClick}> 
     {value}
     </button>
   )

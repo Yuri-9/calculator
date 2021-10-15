@@ -12,10 +12,9 @@ export function ButtonOperator({value}: IButtonOperator): JSX.Element {
   const dispatch = useDispatch();  
   const handleClick = () => {
     dispatch(setOperator(value))
-  }  
-  
+  }    
   return (
-    <button className="button__operator" onClick={handleClick}> 
+    <button className="button button__operator" onClick={handleClick}> 
     {value}
     </button>
   )
