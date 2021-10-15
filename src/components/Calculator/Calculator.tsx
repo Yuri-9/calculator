@@ -4,18 +4,24 @@ import { Display } from '../Display/Dispay';
 import { ButtonNumber } from '../ButtonNumber/ButtonNumber';
 import { ButtonOperator } from '../ButtonOperator/ButtonOperator';
 import { ButtonFunction } from '../ButtonFunction/ButtonFunction';
-import { Operator } from '../../shared/enums';
+import { Memory, Operator } from '../../shared/enums';
 import { useDispatch } from 'react-redux';
-import { clearDisplay } from '../../redux/actions';
+import { clearDisplay, setMemory } from '../../redux/actions';
 
 export function Calculator(): JSX.Element {
   const dispatch = useDispatch(); 
+
   const handleClear = () => {   
      dispatch(clearDisplay());
   }    
   
-  const handleMemory = () => {
-    console.log('clear');    
+  const handleMemoryPlus = () => {  
+     dispatch(setMemory(Memory.PLUS));
+  }
+  
+  const handleMemoryMinus = () => {  
+    dispatch(setMemory(Memory.MINUS));
+     
   }
   
   return (
@@ -23,8 +29,8 @@ export function Calculator(): JSX.Element {
     <Display />
       <div className="calculator__row">
         <ButtonFunction value={'AC'} onClick={handleClear}/>
-        <ButtonFunction value={'MEM+'} onClick={handleMemory}/>
-        <ButtonFunction value={'MEM-'} onClick={handleMemory}/>       
+        <ButtonFunction value={'MEM+'} onClick={handleMemoryPlus}/>
+        <ButtonFunction value={'MEM-'} onClick={handleMemoryMinus}/>       
         <ButtonOperator value={Operator.DIVIDE}/>
        </div>
       <div className="calculator__row">

@@ -6,3 +6,8 @@ export enum Operator {
   EQUAL = '=',
 }
 
+export enum Memory {
+  PLUS = '+',
+  MINUS = '-',  
+}
+

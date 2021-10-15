@@ -1,8 +1,8 @@
 import defaultState from './defaultState';
 import Type from './types';
-import { Operator } from '../shared/enums'
+import { Memory, Operator } from '../shared/enums'
 
-const { SET_NUMBER, SET_OPERATOR, CLEAR_DISPLAY } = Type;
+const { SET_NUMBER, SET_OPERATOR, CLEAR_DISPLAY, SET_MEMORY } = Type;
  
 export default (state = defaultState, { type, value }: { type: string; value: any }): any => {
   switch (type) {
@@ -10,7 +10,7 @@ export default (state = defaultState, { type, value }: { type: string; value: an
       let newNumber;
       if (!state.operator) {
         if(state.result) {
-          return { ...state, number: value, result: null};
+          return { ...state, number: value, result: 0};
         }
         return { ...state, number: state.number * 10 + value};
      }
@@ -37,7 +37,10 @@ export default (state = defaultState, { type, value }: { type: string; value: an
       if (value === Operator.EQUAL) return;
       return { ...state, operator: value };
     case CLEAR_DISPLAY:
-      return { ...state, number: 0, operator: '', result: null};
+      return { ...state, number: 0, operator: '', result: 0};
+    case SET_MEMORY:
+      let newMemory = value === Memory.PLUS ? state.memory + state.number : state.memory - state.number;      
+      return { ...state, memory: newMemory, result: newMemory, number: newMemory};
     default:
       return state;
   }
